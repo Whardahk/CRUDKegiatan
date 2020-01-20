@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class KegiatanAdmin extends CI_Controller {
+class Kegiatan extends CI_Controller {
 	
 
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model(array('KegiatanAdmin_Model'));
+        $this->load->model(array('Kegiatan_Model'));
 
 		// cek session sudah ada/ belum atau user sudah login/ belum, jika sudah maka akan diarahkan ke halaman dashboard
 		//if($this->session->has_userdata('username')){redirect('user');}
@@ -30,7 +30,7 @@ class KegiatanAdmin extends CI_Controller {
 		$isi['anggaran_sub_kegiatan']= '';
 		
 		$isi['data']		= $this->db->get('tb_kegiatan');
-		$this->load->view('kegiatanadmin/kegiatan',$isi);
+		$this->load->view('kegiatan/kegiatan',$isi);
 	}
 
 
@@ -48,7 +48,7 @@ class KegiatanAdmin extends CI_Controller {
 		$isi['anggaran_sub_kegiatan']= '';
 
 		$isi['data']		= $this->db->get('tb_kegiatan');
-		$this->load->view('kegiatanadmin/input_kegiatan',$isi);
+		$this->load->view('kegiatan/input_kegiatan',$isi);
 	}
  
  
@@ -85,7 +85,7 @@ class KegiatanAdmin extends CI_Controller {
 			
 		}
 		
-		$this->load->view('kegiatanAdmin/input_kegiatan', $isi);
+		$this->load->view('kegiatan/input_kegiatan', $isi);
 	}
 	
 
@@ -98,9 +98,9 @@ class KegiatanAdmin extends CI_Controller {
 		$this->db->where('id',$key);
 		$query = $this->db->get('tb_kegiatan');
 		if($query->num_rows()>0){
-			$this->KegiatanAdmin_Model->getdelete($key);
+			$this->Kegiatan_Model->getdelete($key);
 		}
-		redirect ('KegiatanAdmin');
+		redirect ('kegiatan');
 	}
 
 
@@ -120,19 +120,19 @@ class KegiatanAdmin extends CI_Controller {
 
 
 		
-		$query = $this->KegiatanAdmin_Model->getdata($key);
+		$query = $this->Kegiatan_Model->getdata($key);
 			if($query->num_rows()==0){
 				
 				$this->db->set('created_on', 'NOW()', false);
-				$this->KegiatanAdmin_Model->getinsert($data);
+				$this->Kegiatan_Model->getinsert($data);
 				$this->session->set_flashdata('info','data sudah tersimpan');
 				
 			}else{
-				$this->KegiatanAdmin_Model->getupdate($key,$data);
+				$this->Kegiatan_Model->getupdate($key,$data);
 				$this->session->set_flashdata('info','data sukses di update');
 			}
 
-		redirect ('KegiatanAdmin');
+		redirect ('kegiatan');
 		}
 
 }

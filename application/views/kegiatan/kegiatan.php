@@ -49,7 +49,7 @@
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
                             <h4 class="m-t-0 header-title"><b>List Kegiatan Publik 2020</b></h4>
-                            <a href="<?php echo base_url(); ?>index.php/kegiatanadmin/input_kegiatan" class="btn btn-danger btn-small">Tambah Kegiatan Publik</a> 
+                            <a href="<?php echo base_url(); ?>index.php/kegiatan/input_kegiatan" class="btn btn-danger btn-small">Tambah Kegiatan Publik</a> 
                             
 
                             <table id="datatable-keytable" class="table table-striped table-bordered">
@@ -89,8 +89,8 @@
                                     <td><?php echo $row->anggaran_sub_kegiatan; ?></td>
                                     <td><?php echo $row->realisasi_volume_sub; ?></td>
                                     <td align="center">
-                                        <a href="<?php echo base_url(); ?>index.php/kegiatanadmin/edit/<?php echo $row->id ?>" type="button" class="btn btn-info waves-effect w-xs waves-light m-b-5"> Edit </a>
-                                        <a href="<?php echo base_url(); ?>index.php/kegiatanadmin/delete/<?php echo $row->id ?>" type="button" class="btn btn-danger waves-effect w-xs waves-light m-b-5"> Delete </a>
+                                        
+                                        <a href="<?php echo base_url(); ?>index.php/kegiatan/delete/<?php echo $row->id ?>" type="button" class="btn btn-danger waves-effect w-xs waves-light m-b-5"> Delete </a>
                                     </td>
                                 </tr>
                                 <?php } ?>

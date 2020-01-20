@@ -50,7 +50,7 @@
                         <div class="card-box">
 
                                     <div class="p-20">
-                                        <form method="post" role="form" data-parsley-validate novalidate action="<?php echo base_url(); ?>index.php/kegiatanadmin/save/" onSubmit="return cekform()">
+                                        <form method="post" role="form" data-parsley-validate novalidate action="<?php echo base_url(); ?>index.php/kegiatan/save/" onSubmit="return cekform()">
                                             <div class="form-group row" hidden="">
                                                 <label for="kode_jabatan" class="col-sm-2 form-control-label">Index<span class="text-danger">*</span></label>
                                                 <div class="col-sm-10">
@@ -123,7 +123,7 @@
                                                             class="btn btn-default waves-effect m-l-5">
                                                         Reset
                                                     </button>
-                                                    <a href="<?php echo base_url(); ?>index.php/pengunjung" class="btn btn-custom waves-effect m-l-5">Cancel</a>
+                                                    <a href="<?php echo base_url(); ?>index.php/kegiatan" class="btn btn-custom waves-effect m-l-5">Cancel</a>
                                                 </div>
                                             </div>
                                         </form>

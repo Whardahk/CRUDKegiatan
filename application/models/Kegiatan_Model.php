@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class KegiatanAdmin_Model extends CI_model {
+class Kegiatan_Model extends CI_model {
 	
     public function __construct()
     {
